@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 400px; margin: 0 auto; padding: 20px; }
+    .container { display: flex; flex-direction: column; }
+    .form-group { margin-bottom: 15px; }
+    input { width: 100%; padding: 8px; }
+    button { padding: 10px; background: #4CAF50; color: white; border: none; }
+    .navbar { display: none; }
+    @media (max-width: 768px) {
+      .navbar { display: block; position: fixed; width: 100%; top: 0; background: #333; color: white; }
+      .hamburger { margin: 10px; cursor: pointer; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+  
+  <div class="container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      google.script.run.withSuccessHandler(function(output) {
+        alert(output);
+      }).registerUser({username, email, password});
+    });
+    
+    function toggleMenu() {
+      // Implementasi hamburger menu
+    }
+  </script>
+</body>
+</html>
