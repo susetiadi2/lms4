@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .navbar { display: none; }
+    @media (max-width: 768px) {
+      .navbar { display: block; position: fixed; width: 100%; top: 0; background: #333; color: white; }
+      .hamburger { margin: 10px; cursor: pointer; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+  
+  <div class="container">
+    <h2>Pelatihan</h2>
+    <p>Selamat datang di halaman pelatihan!</p>
+    <div class="training-content">
+      <!-- Isi materi pelatihan akan ditambahkan di sini -->
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      // Implementasi hamburger menu
+    }
+    
+    function loadTrainingContent() {
+      // Fungsi untuk memuat konten pelatihan dari spreadsheet
+    }
+  </script>
+</body>
+</html>
